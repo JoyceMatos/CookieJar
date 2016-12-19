@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2500B1F01DF64B8600B0C78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2500B1EF1DF64B8600B0C78D /* AppDelegate.swift */; };
+		2500B1F21DF64B8600B0C78D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2500B1F11DF64B8600B0C78D /* ViewController.swift */; };
+		2500B1F51DF64B8600B0C78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1F31DF64B8600B0C78D /* Main.storyboard */; };
+		2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2500B1F61DF64B8600B0C78D /* CookieJar.xcdatamodeld */; };
+		2500B1FA1DF64B8600B0C78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1F91DF64B8600B0C78D /* Assets.xcassets */; };
+		2500B1FD1DF64B8600B0C78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2500B1EC1DF64B8600B0C78D /* CookieJar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieJar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2500B1EF1DF64B8600B0C78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2500B1F11DF64B8600B0C78D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2500B1F41DF64B8600B0C78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2500B1F71DF64B8600B0C78D /* CookieJar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookieJar.xcdatamodel; sourceTree = "<group>"; };
+		2500B1F91DF64B8600B0C78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2500B1FC1DF64B8600B0C78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2500B1FE1DF64B8600B0C78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2500B1E91DF64B8600B0C78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2500B1E31DF64B8600B0C78D = {
+			isa = PBXGroup;
+			children = (
+				2500B1EE1DF64B8600B0C78D /* CookieJar */,
+				2500B1ED1DF64B8600B0C78D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2500B1ED1DF64B8600B0C78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2500B1EC1DF64B8600B0C78D /* CookieJar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2500B1EE1DF64B8600B0C78D /* CookieJar */ = {
+			isa = PBXGroup;
+			children = (
+				2500B1EF1DF64B8600B0C78D /* AppDelegate.swift */,
+				2500B1F11DF64B8600B0C78D /* ViewController.swift */,
+				2500B1F31DF64B8600B0C78D /* Main.storyboard */,
+				2500B1F91DF64B8600B0C78D /* Assets.xcassets */,
+				2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */,
+				2500B1FE1DF64B8600B0C78D /* Info.plist */,
+				2500B1F61DF64B8600B0C78D /* CookieJar.xcdatamodeld */,
+			);
+			path = CookieJar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2500B1EB1DF64B8600B0C78D /* CookieJar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2500B2011DF64B8600B0C78D /* Build configuration list for PBXNativeTarget "CookieJar" */;
+			buildPhases = (
+				2500B1E81DF64B8600B0C78D /* Sources */,
+				2500B1E91DF64B8600B0C78D /* Frameworks */,
+				2500B1EA1DF64B8600B0C78D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CookieJar;
+			productName = CookieJar;
+			productReference = 2500B1EC1DF64B8600B0C78D /* CookieJar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2500B1E41DF64B8600B0C78D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Joyce Matos";
+				TargetAttributes = {
+					2500B1EB1DF64B8600B0C78D = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2500B1E71DF64B8600B0C78D /* Build configuration list for PBXProject "CookieJar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2500B1E31DF64B8600B0C78D;
+			productRefGroup = 2500B1ED1DF64B8600B0C78D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2500B1EB1DF64B8600B0C78D /* CookieJar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2500B1EA1DF64B8600B0C78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2500B1FD1DF64B8600B0C78D /* LaunchScreen.storyboard in Resources */,
+				2500B1FA1DF64B8600B0C78D /* Assets.xcassets in Resources */,
+				2500B1F51DF64B8600B0C78D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2500B1E81DF64B8600B0C78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2500B1F21DF64B8600B0C78D /* ViewController.swift in Sources */,
+				2500B1F01DF64B8600B0C78D /* AppDelegate.swift in Sources */,
+				2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2500B1F31DF64B8600B0C78D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2500B1F41DF64B8600B0C78D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2500B1FC1DF64B8600B0C78D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2500B1FF1DF64B8600B0C78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2500B2001DF64B8600B0C78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2500B2021DF64B8600B0C78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CookieJar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.CookieJar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2500B2031DF64B8600B0C78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CookieJar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.CookieJar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2500B1E71DF64B8600B0C78D /* Build configuration list for PBXProject "CookieJar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2500B1FF1DF64B8600B0C78D /* Debug */,
+				2500B2001DF64B8600B0C78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2500B2011DF64B8600B0C78D /* Build configuration list for PBXNativeTarget "CookieJar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2500B2021DF64B8600B0C78D /* Debug */,
+				2500B2031DF64B8600B0C78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2500B1F61DF64B8600B0C78D /* CookieJar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2500B1F71DF64B8600B0C78D /* CookieJar.xcdatamodel */,
+			);
+			currentVersion = 2500B1F71DF64B8600B0C78D /* CookieJar.xcdatamodel */;
+			path = CookieJar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2500B1E41DF64B8600B0C78D /* Project object */;
+}
