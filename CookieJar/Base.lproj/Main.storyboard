@@ -52,8 +52,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="yWE-d0-eVQ"/>
-                                    <tabBarItem systemItem="more" id="0Oq-54-yvs"/>
+                                    <tabBarItem title="Map" id="yWE-d0-eVQ"/>
+                                    <tabBarItem title="Camera" id="0zK-MW-AYE"/>
+                                    <tabBarItem title="Cookie Jar" id="0Oq-54-yvs"/>
                                 </items>
                             </tabBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-QX-UrK">

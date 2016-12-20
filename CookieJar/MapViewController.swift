@@ -8,34 +8,49 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    let regionRadius: CLLocationDistance = 1000 // Center point = 1000 meters span
+//    let regionRadius: CLLocationDistance = 1000 // Center point = 1000 meters span
+    var locationManager = CLLocationManager()
     
-  
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        centerMapOnLocation(initialLocation)
-
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        mapView.showsUserLocation = true
+        
         // Do any additional setup after loading the view.
     }
 
-    func centerMapOnLocation(_ location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0,regionRadius * 2.0)
+    
+    // MARK: - Location Delegate Methods
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { print("leavin location"); return }
         
-        mapView.setRegion(coordinateRegion, animated: true)
+        let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
+        
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        
+        mapView.setRegion(region, animated: true)
+        
+        locationManager.stopUpdatingLocation()
+        
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error: \(error.localizedDescription)")
+    }
+
     
-
-
- 
-
 }
