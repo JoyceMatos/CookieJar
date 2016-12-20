@@ -13,6 +13,7 @@
 		2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2500B1F61DF64B8600B0C78D /* CookieJar.xcdatamodeld */; };
 		2500B1FA1DF64B8600B0C78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1F91DF64B8600B0C78D /* Assets.xcassets */; };
 		2500B1FD1DF64B8600B0C78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */; };
+		250DFA011E08C35E006F5453 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DFA001E08C35E006F5453 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2500B1F91DF64B8600B0C78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2500B1FC1DF64B8600B0C78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2500B1FE1DF64B8600B0C78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		250DFA001E08C35E006F5453 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2500B1EF1DF64B8600B0C78D /* AppDelegate.swift */,
 				2500B1F11DF64B8600B0C78D /* ViewController.swift */,
 				2500B1F31DF64B8600B0C78D /* Main.storyboard */,
+				250DFA001E08C35E006F5453 /* MapViewController.swift */,
 				2500B1F91DF64B8600B0C78D /* Assets.xcassets */,
 				2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */,
 				2500B1FE1DF64B8600B0C78D /* Info.plist */,
@@ -142,6 +145,7 @@
 				2500B1F21DF64B8600B0C78D /* ViewController.swift in Sources */,
 				2500B1F01DF64B8600B0C78D /* AppDelegate.swift in Sources */,
 				2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */,
+				250DFA011E08C35E006F5453 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +305,7 @@
 				2500B2031DF64B8600B0C78D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
