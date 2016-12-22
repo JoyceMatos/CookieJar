@@ -16,6 +16,7 @@
 		250DFA011E08C35E006F5453 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DFA001E08C35E006F5453 /* MapViewController.swift */; };
 		25574EE71E08DA2A00F481FD /* YelpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */; };
 		25574EE91E08DA6C00F481FD /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE81E08DA6C00F481FD /* Secrets.swift */; };
+		25574EEF1E09B40500F481FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25574EEE1E09B40500F481FD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		250DFA001E08C35E006F5453 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
 		25574EE81E08DA6C00F481FD /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		25574EEE1E09B40500F481FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25574EEF1E09B40500F481FD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				2500B1EE1DF64B8600B0C78D /* CookieJar */,
 				2500B1ED1DF64B8600B0C78D /* Products */,
+				25574EED1E09B40500F481FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,17 +67,49 @@
 			isa = PBXGroup;
 			children = (
 				2500B1EF1DF64B8600B0C78D /* AppDelegate.swift */,
-				2500B1F11DF64B8600B0C78D /* ViewController.swift */,
 				25574EE81E08DA6C00F481FD /* Secrets.swift */,
-				25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */,
+				25574EEA1E0998E900F481FD /* Model */,
+				25574EEB1E0998F400F481FD /* View */,
+				25574EEC1E09990300F481FD /* Controller */,
 				2500B1F31DF64B8600B0C78D /* Main.storyboard */,
-				250DFA001E08C35E006F5453 /* MapViewController.swift */,
 				2500B1F91DF64B8600B0C78D /* Assets.xcassets */,
 				2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */,
 				2500B1FE1DF64B8600B0C78D /* Info.plist */,
 				2500B1F61DF64B8600B0C78D /* CookieJar.xcdatamodeld */,
 			);
 			path = CookieJar;
+			sourceTree = "<group>";
+		};
+		25574EEA1E0998E900F481FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		25574EEB1E0998F400F481FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		25574EEC1E09990300F481FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				250DFA001E08C35E006F5453 /* MapViewController.swift */,
+				2500B1F11DF64B8600B0C78D /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		25574EED1E09B40500F481FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25574EEE1E09B40500F481FD /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +144,13 @@
 				TargetAttributes = {
 					2500B1EB1DF64B8600B0C78D = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A95Z7XMH9W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -274,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A95Z7XMH9W;
 				INFOPLIST_FILE = CookieJar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.CookieJar";
@@ -286,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A95Z7XMH9W;
 				INFOPLIST_FILE = CookieJar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.CookieJar";
