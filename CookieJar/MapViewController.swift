@@ -13,10 +13,12 @@ import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var locationManager = CLLocationManager()
+//    var latitude = Double()
+//    var longitude = Double()
+    
     @IBOutlet weak var mapView: MKMapView!
     
-//    let regionRadius: CLLocationDistance = 1000 // Center point = 1000 meters span
-    var locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
@@ -28,6 +30,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
+        
+//        guard let latitude = locationManager.location?.coordinate.latitude else { print("no latitude"); return }
+//        guard let longitude = locationManager.location?.coordinate.longitude else { print("no longitude"); return }
+//
+//        print(latitude)
+//        print(longitude)
         
         // Do any additional setup after loading the view.
     }
@@ -42,6 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         
+     
         mapView.setRegion(region, animated: true)
         
         locationManager.stopUpdatingLocation()
