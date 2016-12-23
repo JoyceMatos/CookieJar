@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        FourSquareAPIClient.getCookies { (vendors) in
+//            
+//            print(vendors)
+//            
+//        }
     }
 
     override func didReceiveMemoryWarning() {
