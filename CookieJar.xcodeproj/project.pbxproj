@@ -15,6 +15,8 @@
 		2500B1FD1DF64B8600B0C78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2500B1FB1DF64B8600B0C78D /* LaunchScreen.storyboard */; };
 		250DFA011E08C35E006F5453 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DFA001E08C35E006F5453 /* MapViewController.swift */; };
 		255377941E0CCF36002F7373 /* FourSquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255377931E0CCF36002F7373 /* FourSquareAPIClient.swift */; };
+		255377961E0DD4C9002F7373 /* FourSquareDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255377951E0DD4C9002F7373 /* FourSquareDataStore.swift */; };
+		255377981E0DD5FE002F7373 /* CookieShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255377971E0DD5FE002F7373 /* CookieShop.swift */; };
 		25574EE71E08DA2A00F481FD /* YelpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */; };
 		25574EE91E08DA6C00F481FD /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE81E08DA6C00F481FD /* Secrets.swift */; };
 		25574EEF1E09B40500F481FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25574EEE1E09B40500F481FD /* MapKit.framework */; };
@@ -31,6 +33,8 @@
 		2500B1FE1DF64B8600B0C78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		250DFA001E08C35E006F5453 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		255377931E0CCF36002F7373 /* FourSquareAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareAPIClient.swift; sourceTree = "<group>"; };
+		255377951E0DD4C9002F7373 /* FourSquareDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareDataStore.swift; sourceTree = "<group>"; };
+		255377971E0DD5FE002F7373 /* CookieShop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieShop.swift; sourceTree = "<group>"; };
 		25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
 		25574EE81E08DA6C00F481FD /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		25574EEE1E09B40500F481FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -86,6 +90,8 @@
 			children = (
 				25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */,
 				255377931E0CCF36002F7373 /* FourSquareAPIClient.swift */,
+				255377951E0DD4C9002F7373 /* FourSquareDataStore.swift */,
+				255377971E0DD5FE002F7373 /* CookieShop.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,12 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255377961E0DD4C9002F7373 /* FourSquareDataStore.swift in Sources */,
 				2500B1F21DF64B8600B0C78D /* ViewController.swift in Sources */,
 				25574EE91E08DA6C00F481FD /* Secrets.swift in Sources */,
 				2500B1F01DF64B8600B0C78D /* AppDelegate.swift in Sources */,
 				2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */,
 				255377941E0CCF36002F7373 /* FourSquareAPIClient.swift in Sources */,
 				250DFA011E08C35E006F5453 /* MapViewController.swift in Sources */,
+				255377981E0DD5FE002F7373 /* CookieShop.swift in Sources */,
 				25574EE71E08DA2A00F481FD /* YelpAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
