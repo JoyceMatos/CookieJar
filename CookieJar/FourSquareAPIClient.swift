@@ -10,7 +10,7 @@ import Foundation
 
 class FourSquareAPIClient {
     
-    class func getCookies(lat: Double, long: Double, completion: @escaping ([String : Any]) -> Void) {
+    class func getCookies(lat: Double, long: Double, completion: @escaping ([[String : Any]]) -> Void) {
         
         let fourSquare = FourSquareCredentials()
         
@@ -21,12 +21,16 @@ class FourSquareAPIClient {
         let session = URLSession.shared
         
         let task = session.dataTask(with: url) { (data, response, error) in
+
             
             guard let data = data else { print("error in data"); return }
             
             if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
                 
-                completion(responseJSON)
+                let response = responseJSON["response"] as! [String : Any]
+                let venues = response["venues"] as! [[String : Any]]
+                
+                completion(venues)
                 
             }
             

@@ -13,6 +13,8 @@ import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    let store = FourSquareDataStore.sharedInstance
+    
     var locationManager = CLLocationManager()
 //    var latitude = Double()
 //    var longitude = Double()
@@ -39,12 +41,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         // Do any additional setup after loading the view.
         
-        FourSquareAPIClient.getCookies(lat: 40.7, long: -74) { (cookies) in
+       // FourSquareAPIClient.getCookies(lat: 40.7, long: -74) { (cookies) in
+       //     print(cookies)
             
-            print(cookies)
+       // }
+
+        store.getCookieShopsFromAPI(lat: 40.7, long: -74) { 
+            
+            
+            print("GETTING CALLED")
             
         }
-        
     }
 
     

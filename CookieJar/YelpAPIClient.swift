@@ -24,6 +24,8 @@ class YelpAPIClient {
         
         if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
             
+            
+            
             completion(responseJSON)
         
         }

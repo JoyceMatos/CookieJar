@@ -15,27 +15,31 @@ class CookieShop {
     var address: [String]
     var latitude: Double
     var longitude: Double
-    var distance: Double?
+    var distance: Int?
     var type: String
     var fourSquareURL: String
+
     
-    init(fourSquareDictionary: [String : Any]) {
+    init(cookieDict: [String : Any]) {
         
-        let fsDictionary = fourSquareDictionary["response"] as! [String : Any]
-        let venueInfo = fsDictionary["venue"] as! [String : Any]
-        let venueContact = venueInfo["contact"] as! [String : Any]
-        let location = venueInfo["location"] as! [String : Any]
-        let categories = venueInfo["categories"] as! [String : Any]
-        let venueID = venueInfo["id"] as! String
+        let venueName = cookieDict["name"] as! String
+        let contact = cookieDict["contact"] as! [String : Any]
+        let phoneNumber = contact["formattedPhone"] as! String
+        let address = cookieDict["formatatedAddress"] as! [String]
+        let latitude = cookieDict["lat"] as! Double
+        let longitude = cookieDict["lng"] as! Double
+        let distance = cookieDict["disance"] as! Int
+        let type = cookieDict["type"] as! String
+        let venueID = cookieDict["id"] as! String
         
-        self.venueName = venueInfo["name"] as! String
-        self.contact = venueContact["formattedPhone"] as! String
-        self.address = venueInfo["formattedAddress"] as! [String]
-        self.latitude = location["lat"] as! Double
-        self.longitude = location["lng"] as! Double
-        self.type = categories["name"] as! String
+        self.venueName = venueName
+        self.contact = phoneNumber
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.distance = distance
+        self.type = type
         self.fourSquareURL = "http://foursquare.com/v/\(venueID)"
-        
         
     }
     

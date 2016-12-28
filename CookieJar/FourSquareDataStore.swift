@@ -8,30 +8,26 @@
 
 import Foundation
 
-//class FourSquareDataStore {
-//    
-//    static let sharedInstance = FourSquareDataStore()
-//    
-//    let cookieShops = [CookieShop]()
-//    
-//    func getCookieShopsFromAPI() {
-//        
-//        self.cookieShops.removeAll()
-//        
-//        FourSquareAPIClient.getCookies(lat: 40.7, long: -74) { (cookieShops) in
-//            
-        // Loop through array of venue id's , there must be an array somewhere in the dictionary 
-            // 1. Find the key who's value is an array of dictionaries
+class FourSquareDataStore {
 
-//            for shop in cookieShops {
-//                
-//                
-//                
-//            }
-//            
-//        }
-//        
-//    }
-//
-//    
-//}
+    static let sharedInstance = FourSquareDataStore()
+
+    var cookieShops: [CookieShop] = []
+
+    func getCookieShopsFromAPI(lat: Double, long: Double, completion: () -> Void) {
+
+        self.cookieShops.removeAll()
+
+        FourSquareAPIClient.getCookies(lat: lat, long: long) { (cookieShops) in
+
+            for shop in cookieShops {
+               
+               var cookie = CookieShop(cookieDict: shop)
+                cookieShops.append(cookie)
+                
+                print(cookie)
+            }
+        }
+    }
+    
+}
