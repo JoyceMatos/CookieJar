@@ -18,14 +18,14 @@ class FourSquareDataStore {
 
         self.cookieShops.removeAll()
 
-        FourSquareAPIClient.getCookies(lat: lat, long: long) { (cookieShops) in
+        FourSquareAPIClient.getCookies(lat: lat, long: long) { (cookieVenues) in
 
-            for shop in cookieShops {
+            for shop in cookieVenues {
                
                var cookie = CookieShop(cookieDict: shop)
-                cookieShops.append(cookie)
+                self.cookieShops.append(cookie)
                 
-                print(cookie)
+                print(cookie.latitude)
             }
         }
     }
