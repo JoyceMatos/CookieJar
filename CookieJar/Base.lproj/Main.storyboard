@@ -66,11 +66,39 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="lwg-QX-UrK" id="M5a-Dm-BmY"/>
+                        <segue destination="R6c-3M-Yx0" kind="show" identifier="detailView" id="Yqf-ja-oMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd1-uH-3CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957.60000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Df4-M7-YMj">
+            <objects>
+                <viewController id="R6c-3M-Yx0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="emi-6J-BmL"/>
+                        <viewControllerLayoutGuide type="bottom" id="4x4-na-9qr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pFf-0M-VYO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You just segued" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kl-pq-vcR">
+                                <rect key="frame" x="77" y="161" width="271" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2mB-03-zHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759.2" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

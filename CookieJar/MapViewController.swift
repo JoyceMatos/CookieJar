@@ -30,22 +30,32 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
-        
-        
-        store.getCookieShopsFromAPI(lat: 40.746040, long: -73.982011) {
-        
-        }
-        
+            self.store.getCookieShopsFromAPI(lat: 40.746040, long: -73.982011) {
+                
+                
+            }
+
         DispatchQueue.main.async {
             for shop in self.store.cookieShops {
-                let coordinate = CLLocationCoordinate2D(latitude: shop.latitude!, longitude: shop.longitude!)
-                let cookie = Annotation(title: shop.venueName!, coordinate: coordinate, info: "gsg", subtitle: shop.venueName!)
+                guard let title = shop.venueName else { print("no title"); return }
+                guard let latitude = shop.latitude else { print("no lat"); return }
+                guard let longitude = shop.longitude else { print("no long"); return }
+                let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let cookie = Annotation(title: title, coordinate: coordinate, info: "gsg", subtitle: title)
                 self.mapView.addAnnotation(cookie)
+            
+          //      pinAnnotationView = MKPinAnnotationView(annotation: cookie, reuseIdentifier: "pin")
+          //      mapView.addAnnotation(pinAnnotationView.annotation!)
             }
+            
         }
-        
-        
-        
+
+        // Dummy Coordinate
+//       let coordinate = CLLocationCoordinate2D(latitude: 40.746040, longitude: -73.982011)
+//        
+//        let cookie = Annotation(title: "heyyy", coordinate: coordinate, info: "gsg", subtitle: "hiiii")
+//        self.mapView.addAnnotation(cookie)
+//        
         
     }
 
@@ -55,17 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
        guard let myPosition = locations.last?.coordinate else { print("leavin location"); return }
-        
-        
-////        guard let location = locations.last else { print("leavin location"); return }
-////        
-////        let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
-////        
-////        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
-////        
-////     
-////        mapView.setRegion(region, animated: true)
-////        
+     
         locationManager.stopUpdatingLocation()
         
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -75,12 +75,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
       
     }
     
-
-
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error.localizedDescription)")
     }
-
     
+    // MARK: - Annotation Delegate Methods
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let identifier = "pin"
+            
+            if annotation.isKind(of: Annotation.self) {
+                if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                    
+                    // Reuse Annotationview
+                    
+                    annotationView.annotation = annotation
+                    return annotationView
+                } else {
+                    
+                    // Create Annotation
+                    
+                    let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+                    annotationView.isEnabled = true
+                    annotationView.canShowCallout = true
+                    
+                    // Here I create the button and add in accessoryView
+                    
+                    let btn = UIButton(type: .detailDisclosure)
+                    annotationView.rightCalloutAccessoryView = btn
+                    return annotationView
+                }
+            }
+            return nil
+        }
+
 }

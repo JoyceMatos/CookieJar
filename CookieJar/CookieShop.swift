@@ -36,6 +36,7 @@ class CookieShop {
         let type = cookieDict["type"] as? String
         let venueID = cookieDict["id"] as? String
         
+        
 //        self.title = venueName
 //        self.coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
         self.venueName = venueName
