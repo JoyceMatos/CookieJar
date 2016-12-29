@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import MapKit
 
 class CookieShop {
     
+//    var title: String?
+//    var coordinate: CLLocationCoordinate2D
     var venueName: String?
     var contact: String?
     var address: [String]?
@@ -33,6 +36,9 @@ class CookieShop {
         let type = cookieDict["type"] as? String
         let venueID = cookieDict["id"] as? String
         
+        
+//        self.title = venueName
+//        self.coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
         self.venueName = venueName
         self.contact = phoneNumber
         self.address = address

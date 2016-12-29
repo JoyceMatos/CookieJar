@@ -16,13 +16,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let store = FourSquareDataStore.sharedInstance
     
     var locationManager = CLLocationManager()
-//    var latitude = Double()
-//    var longitude = Double()
-    
+    var myPosition = CLLocationCoordinate2D()
+
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,49 +29,103 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        mapView.delegate = self
         mapView.showsUserLocation = true
         
-//        guard let latitude = locationManager.location?.coordinate.latitude else { print("no latitude"); return }
-//        guard let longitude = locationManager.location?.coordinate.longitude else { print("no longitude"); return }
-//
-//        print(latitude)
-//        print(longitude)
-        
-        // Do any additional setup after loading the view.
-        
-       // FourSquareAPIClient.getCookies(lat: 40.7, long: -74) { (cookies) in
-       //     print(cookies)
-            
-       // }
+            self.store.getCookieShopsFromAPI(lat: 40.746040, long: -73.982011) {
+                
+                
+            }
 
-        store.getCookieShopsFromAPI(lat: 40.7, long: -74) { 
+        DispatchQueue.main.async {
+            for shop in self.store.cookieShops {
+                guard let title = shop.venueName else { print("no title"); return }
+                guard let latitude = shop.latitude else { print("no lat"); return }
+                guard let longitude = shop.longitude else { print("no long"); return }
+                let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let cookie = Annotation(title: title, coordinate: coordinate, info: "gsg", subtitle: title)
+                self.mapView.addAnnotation(cookie)
             
-            
-            print("GETTING CALLED")
+          //      pinAnnotationView = MKPinAnnotationView(annotation: cookie, reuseIdentifier: "pin")
+          //      mapView.addAnnotation(pinAnnotationView.annotation!)
+            }
             
         }
+        
     }
 
     
     // MARK: - Location Delegate Methods
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { print("leavin location"); return }
         
-        let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
-        
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
-        
+       guard let myPosition = locations.last?.coordinate else { print("leavin location"); return }
      
-        mapView.setRegion(region, animated: true)
-        
         locationManager.stopUpdatingLocation()
         
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(myPosition, span)
+        mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+      
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error.localizedDescription)")
     }
-
     
+    // MARK: - Annotation Delegate Methods
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let identifier = "pin"
+            
+            if annotation.isKind(of: Annotation.self) {
+                if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                    
+                    // Reuse Annotationview
+                    
+                    annotationView.annotation = annotation
+                    return annotationView
+                } else {
+                    
+                    // Create Annotation
+                    
+                    let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+                    annotationView.isEnabled = true
+                    annotationView.canShowCallout = true
+                    
+                    // Here I create the button and add in accessoryView
+                    
+                    let btn = UIButton(type: .detailDisclosure)
+                    annotationView.rightCalloutAccessoryView = btn
+                    return annotationView
+                }
+            }
+            return nil
+        }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let venue = view.annotation as! Annotation
+        let venueName = venue.title
+        let venueInfo = venue.subtitle
+
+        
+        performSegue(withIdentifier: "detailView", sender: self)
+   
+    }
+    
+    // Mark: - Segue function
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "detailView" {
+//            let destination = segue.destination as
+//        }
+//        
+//        
+//    }
+    
+    
+    
+
 }
