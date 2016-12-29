@@ -114,6 +114,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
    
     }
     
+    // Mark: - Segue function
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "detailView" {
+//            let destination = segue.destination as
+//        }
+//        
+//        
+//    }
     
     
     
