@@ -20,6 +20,7 @@
 		25574EE71E08DA2A00F481FD /* YelpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */; };
 		25574EE91E08DA6C00F481FD /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25574EE81E08DA6C00F481FD /* Secrets.swift */; };
 		25574EEF1E09B40500F481FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25574EEE1E09B40500F481FD /* MapKit.framework */; };
+		255AA49B1E1472E300B76FD4 /* CookieAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AA49A1E1472E300B76FD4 /* CookieAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		25574EE61E08DA2A00F481FD /* YelpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
 		25574EE81E08DA6C00F481FD /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		25574EEE1E09B40500F481FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		255AA49A1E1472E300B76FD4 /* CookieAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				255377931E0CCF36002F7373 /* FourSquareAPIClient.swift */,
 				255377951E0DD4C9002F7373 /* FourSquareDataStore.swift */,
 				255377971E0DD5FE002F7373 /* CookieShop.swift */,
+				255AA49A1E1472E300B76FD4 /* CookieAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				255377961E0DD4C9002F7373 /* FourSquareDataStore.swift in Sources */,
 				2500B1F21DF64B8600B0C78D /* ViewController.swift in Sources */,
+				255AA49B1E1472E300B76FD4 /* CookieAnnotation.swift in Sources */,
 				25574EE91E08DA6C00F481FD /* Secrets.swift in Sources */,
 				2500B1F01DF64B8600B0C78D /* AppDelegate.swift in Sources */,
 				2500B1F81DF64B8600B0C78D /* CookieJar.xcdatamodeld in Sources */,

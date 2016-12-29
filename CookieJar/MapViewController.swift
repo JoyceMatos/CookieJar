@@ -16,13 +16,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let store = FourSquareDataStore.sharedInstance
     
     var locationManager = CLLocationManager()
-//    var latitude = Double()
-//    var longitude = Double()
-    
+    var myPosition = CLLocationCoordinate2D()
+
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,20 +30,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
-        
-//        guard let latitude = locationManager.location?.coordinate.latitude else { print("no latitude"); return }
-//        guard let longitude = locationManager.location?.coordinate.longitude else { print("no longitude"); return }
-//
-//        print(latitude)
-//        print(longitude)
-        
-        // Do any additional setup after loading the view.
-        
-       // FourSquareAPIClient.getCookies(lat: 40.7, long: -74) { (cookies) in
-       //     print(cookies)
-            
-       // }
 
+        let first = Cookie(title: "Cookie1", coordinate: CLLocationCoordinate2D(latitude: 40.746040, longitude: -73.982011), info: "Home to the 2012 Summer Olympics.")
+        let second = Cookie(title: "Cookie2", coordinate: CLLocationCoordinate2D(latitude: 40.745046, longitude: -73.978138), info: "Founded over a thousand years ago.")
+        
+        mapView.addAnnotation(first)
+        mapView.addAnnotation(second)
+        
+        
         store.getCookieShopsFromAPI(lat: 40.7, long: -74) { 
             
             
@@ -58,18 +50,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // MARK: - Location Delegate Methods
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { print("leavin location"); return }
         
-        let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
+       guard let myPosition = locations.last?.coordinate else { print("leavin location"); return }
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         
-     
-        mapView.setRegion(region, animated: true)
-        
+////        guard let location = locations.last else { print("leavin location"); return }
+////        
+////        let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
+////        
+////        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+////        
+////     
+////        mapView.setRegion(region, animated: true)
+////        
         locationManager.stopUpdatingLocation()
         
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(myPosition, span)
+        mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+      
     }
+    
+
+
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error.localizedDescription)")
