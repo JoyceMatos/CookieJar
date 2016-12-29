@@ -10,25 +10,15 @@ import Foundation
 import UIKit
 import MapKit
 
-//class CookieAnnotation: MKPointAnnotation {
-//    
-//    var pinImage: String?
-//    
-//    
-//    
-//    
-//    
-//    
-//    
-//}
-
-class Cookie: NSObject, MKAnnotation {
+class Annotation: NSObject, MKAnnotation {
     var title: String?
+    var subtitle: String?
     var coordinate: CLLocationCoordinate2D
     var info: String
     
-    init(title: String, coordinate: CLLocationCoordinate2D, info: String) {
+    init(title: String, coordinate: CLLocationCoordinate2D, info: String, subtitle: String) {
         self.title = title
+        self.subtitle = subtitle
         self.coordinate = coordinate
         self.info = info
     }

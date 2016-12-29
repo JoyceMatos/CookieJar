@@ -30,20 +30,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true
-
-        let first = Cookie(title: "Cookie1", coordinate: CLLocationCoordinate2D(latitude: 40.746040, longitude: -73.982011), info: "Home to the 2012 Summer Olympics.")
-        let second = Cookie(title: "Cookie2", coordinate: CLLocationCoordinate2D(latitude: 40.745046, longitude: -73.978138), info: "Founded over a thousand years ago.")
-        
-        mapView.addAnnotation(first)
-        mapView.addAnnotation(second)
         
         
-        store.getCookieShopsFromAPI(lat: 40.7, long: -74) { 
-            
-            
-            print("GETTING CALLED")
-            
+        store.getCookieShopsFromAPI(lat: 40.746040, long: -73.982011) {
+        
         }
+        
+        DispatchQueue.main.async {
+            for shop in self.store.cookieShops {
+                let coordinate = CLLocationCoordinate2D(latitude: shop.latitude!, longitude: shop.longitude!)
+                let cookie = Annotation(title: shop.venueName!, coordinate: coordinate, info: "gsg", subtitle: shop.venueName!)
+                self.mapView.addAnnotation(cookie)
+            }
+        }
+        
+        
+        
+        
     }
 
     
