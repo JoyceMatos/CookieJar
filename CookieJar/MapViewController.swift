@@ -29,7 +29,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        mapView.delegate = self
         mapView.showsUserLocation = true
+        
             self.store.getCookieShopsFromAPI(lat: 40.746040, long: -73.982011) {
                 
                 
@@ -49,13 +51,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
             
         }
-
-        // Dummy Coordinate
-//       let coordinate = CLLocationCoordinate2D(latitude: 40.746040, longitude: -73.982011)
-//        
-//        let cookie = Annotation(title: "heyyy", coordinate: coordinate, info: "gsg", subtitle: "hiiii")
-//        self.mapView.addAnnotation(cookie)
-//        
         
     }
 
@@ -108,5 +103,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
             return nil
         }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let venue = view.annotation as! Annotation
+        let venueName = venue.title
+        let venueInfo = venue.subtitle
+
+        
+        performSegue(withIdentifier: "detailView", sender: self)
+   
+    }
+    
+    
+    
+    
 
 }
