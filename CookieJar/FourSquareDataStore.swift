@@ -28,6 +28,8 @@ class FourSquareDataStore {
                 print(cookie.latitude)
             }
         }
+        
+        completion()
     }
     
 }

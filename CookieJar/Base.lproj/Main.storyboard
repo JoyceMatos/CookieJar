@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qFg-cf-wDc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LWI-ur-Dia">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,6 +64,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mUb-Y3-Ku1"/>
                     <connections>
                         <outlet property="mapView" destination="lwg-QX-UrK" id="M5a-Dm-BmY"/>
                         <segue destination="R6c-3M-Yx0" kind="show" identifier="detailView" id="Yqf-ja-oMh"/>
@@ -71,12 +72,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd1-uH-3CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.60000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1896.8" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed View Controller-->
         <scene sceneID="Df4-M7-YMj">
             <objects>
-                <viewController id="R6c-3M-Yx0" sceneMemberID="viewController">
+                <viewController id="R6c-3M-Yx0" customClass="DetailedViewController" customModule="CookieJar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="emi-6J-BmL"/>
                         <viewControllerLayoutGuide type="bottom" id="4x4-na-9qr"/>
@@ -131,10 +132,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="7V5-vf-JmK" id="r2H-uO-WTQ"/>
+                        <outlet property="venueLinkLabel" destination="fJz-D1-lHJ" id="pni-Kb-5cx"/>
+                        <outlet property="venueLocationLabel" destination="0h7-3h-Pk8" id="zJm-e2-akw"/>
+                        <outlet property="venueNameLabel" destination="5kl-pq-vcR" id="t3T-oc-otm"/>
+                        <outlet property="venuePhoneLabel" destination="bcW-ya-qnn" id="KQ2-AP-A35"/>
+                        <outlet property="venueTypeLabel" destination="42H-Z0-ZeR" id="rZL-PV-Kt1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mB-03-zHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759.2" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2698.4000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="svJ-ha-ZIz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LWI-ur-Dia" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0QL-0g-ktT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qFg-cf-wDc" kind="relationship" relationship="rootViewController" id="Rqe-pi-mCW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVd-jd-8am" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.60000000000002" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

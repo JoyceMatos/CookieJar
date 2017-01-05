@@ -116,14 +116,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // Mark: - Segue function
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "detailView" {
+
+            if let destination = segue.destination as? DetailedViewController, let annotationView = sender as? MKPinAnnotationView {
+                destination.annotation = annotationView.annotation as? MKPointAnnotation
+                print("********\(destination.annotation)*****")
+            }
+        }
+
+        
+        
 //        if segue.identifier == "detailView" {
-//            let destination = segue.destination as
+//            let destination = segue.destination as! DetailedViewController
+////            destination.venueNameLabel.text = ((sender as! MKAnnotationView).annotation?.title)!
 //        }
-//        
-//        
-//    }
+        
+        
+    }
     
     
     
